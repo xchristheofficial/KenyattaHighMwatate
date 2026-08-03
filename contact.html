@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Kenyatta High School Mwatate</title>
+    <link rel="icon" type="image/jpeg" href="images/badge.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="preloader"><div class="loader"></div></div>
+    <header id="header">
+        <div class="top-bar"><div class="container"><span><i class="fas fa-phone"></i> 020-2338069 / 0743 123135</span><span><i class="fas fa-envelope"></i> Kenyattataita@gmail.com</span><span><i class="fas fa-map-marker-alt"></i> Mwatate</span></div></div>
+        <nav class="navbar"><div class="container"><a href="index.html" class="logo"><img src="images/badge.jpg" alt="Logo"><div><h1>Kenyatta High</h1><p>Mwatate</p></div></a><ul class="nav-menu" id="nav-menu"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="academics.html">Academics</a></li><li><a href="news.html">News & Events</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html" class="active">Contact</a></li><li><button id="darkModeToggle"><i class="fas fa-moon"></i></button></li></ul><div class="hamburger"><span></span><span></span><span></span></div></div></nav>
+    </header>
+
+    <section id="contact" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-grid">
+                <form id="contactForm" class="contact-form">
+                    <input type="text" id="name" placeholder="Your Full Name" required>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <input type="text" id="subject" placeholder="Subject">
+                    <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message <i class="fas fa-paper-plane"></i></button>
+                    <div id="form-status"></div>
+                </form>
+                <div class="contact-info">
+                    <div class="info-item"><i class="fas fa-map-marker-alt fa-2x"></i><p>P.O. Box 57 - 80305, Mwatate, Kenya</p></div>
+                    <div class="info-item"><i class="fas fa-phone-alt fa-2x"></i><p>020-2338069 / 0743 123135</p></div>
+                    <div class="info-item"><i class="fas fa-envelope fa-2x"></i><p>Kenyattataita@gmail.com</p></div>
+                    <div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div>
+                </div>
+            </div>
+            <div class="map-container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.646634705783!2d38.3562!3d-3.4087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1838fb2b9a5f6e6b%3A0x8a0e1a0f5f9b0b1a!2sMwatate!5e0!3m2!1sen!2ske!4v1620000000000" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col"><h3>Kenyatta High Mwatate</h3><p>"Education for service" – since 1970.</p></div>
+            <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="academics.html">Academics</a></li><li><a href="gallery.html">Gallery</a></li></ul></div>
+            <div class="footer-col"><h4>Contact</h4><p><i class="fas fa-phone"></i> 020-2338069<br>0743 123135</p><p><i class="fas fa-envelope"></i> Kenyattataita@gmail.com</p></div>
+            <div class="footer-col"><h4>Newsletter</h4><form id="newsletterForm"><input type="email" placeholder="Enter your email" required><button type="submit" class="btn btn-sm">Subscribe</button></form></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 Kenyatta High School Mwatate. | KNEC: 1100003</p></div>
+    </footer>
+    <button id="backToTop"><i class="fas fa-chevron-up"></i></button>
+    <script src="js/main.js"></script>
+</body>
+</html>

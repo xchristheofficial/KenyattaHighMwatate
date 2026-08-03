@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Events | Kenyatta High School Mwatate</title>
+    <link rel="icon" type="image/jpeg" href="images/badge.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="preloader"><div class="loader"></div></div>
+    <header id="header">
+        <div class="top-bar"><div class="container"><span><i class="fas fa-phone"></i> 020-2338069 / 0743 123135</span><span><i class="fas fa-envelope"></i> Kenyattataita@gmail.com</span><span><i class="fas fa-map-marker-alt"></i> Mwatate</span></div></div>
+        <nav class="navbar"><div class="container"><a href="index.html" class="logo"><img src="images/badge.jpg" alt="Logo"><div><h1>Kenyatta High</h1><p>Mwatate</p></div></a><ul class="nav-menu" id="nav-menu"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="academics.html">Academics</a></li><li><a href="news.html" class="active">News & Events</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li><li><button id="darkModeToggle"><i class="fas fa-moon"></i></button></li></ul><div class="hamburger"><span></span><span></span><span></span></div></div></nav>
+    </header>
+
+    <section id="news" class="section">
+        <div class="container">
+            <h2 class="section-title">News & Upcoming Events</h2>
+            <div class="news-grid">
+                <article class="news-card"><img src="images/sports.png" alt="Sports day"><div class="news-body"><span class="date"><i class="far fa-calendar-alt"></i> Aug 15, 2026</span><h3>Annual Sports Day 2026</h3><p>Join us for a day of athletic competition and house spirit.</p><a href="#" class="read-more" data-modal="modal-sports">Read More <i class="fas fa-arrow-right"></i></a></div></article>
+                <article class="news-card"><img src="images/kcse.jpg" alt="Exam results"><div class="news-body"><span class="date"><i class="far fa-calendar-alt"></i> Jul 28, 2026</span><h3>KCSE 2025 Results Out</h3><p>Mean score of 8.959, over 90% university transition.</p><a href="#" class="read-more" data-modal="modal-results">Read More <i class="fas fa-arrow-right"></i></a></div></article>
+                <article class="news-card"><img src="images/science.png" alt="Science fair"><div class="news-body"><span class="date"><i class="far fa-calendar-alt"></i> Sep 02, 2026</span><h3>Science & Innovation Fair</h3><p>Students showcase innovative projects.</p><a href="#" class="read-more" data-modal="modal-fair">Read More <i class="fas fa-arrow-right"></i></a></div></article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals (same as before) -->
+    <div id="modal-sports" class="modal"><div class="modal-content"><span class="close-modal">&times;</span><h3>Annual Sports Day 2026</h3><p>Full details...</p></div></div>
+    <div id="modal-results" class="modal"><div class="modal-content"><span class="close-modal">&times;</span><h3>KCSE 2025 Results</h3><p>Detailed analysis...</p></div></div>
+    <div id="modal-fair" class="modal"><div class="modal-content"><span class="close-modal">&times;</span><h3>Science Fair</h3><p>Projects and winners...</p></div></div>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col"><h3>Kenyatta High Mwatate</h3><p>"Education for service" – since 1970.</p></div>
+            <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="academics.html">Academics</a></li><li><a href="gallery.html">Gallery</a></li></ul></div>
+            <div class="footer-col"><h4>Contact</h4><p><i class="fas fa-phone"></i> 020-2338069<br>0743 123135</p><p><i class="fas fa-envelope"></i> Kenyattataita@gmail.com</p></div>
+            <div class="footer-col"><h4>Newsletter</h4><form id="newsletterForm"><input type="email" placeholder="Enter your email" required><button type="submit" class="btn btn-sm">Subscribe</button></form></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 Kenyatta High School Mwatate. | KNEC: 1100003</p></div>
+    </footer>
+    <button id="backToTop"><i class="fas fa-chevron-up"></i></button>
+    <script src="js/main.js"></script>
+</body>
+</html>
