@@ -1,146 +1,75 @@
-// Preloader
-window.addEventListener('load', () => {
-    const preloader = document.getElementById('preloader');
-    if (preloader) preloader.classList.add('fade-out');
+const menu = document.querySelector(".menu");
+const nav = document.querySelector("#nav");
+function toggleMenu(open) {
+  nav.classList.toggle("open", open);
+  menu.setAttribute("aria-expanded", String(open));
+}
+menu.addEventListener("click", () =>
+  toggleMenu(!nav.classList.contains("open")),
+);
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && nav.classList.contains("open")) {
+    toggleMenu(false);
+    menu.focus();
+  }
 });
-
-// Dark Mode
-const darkModeToggle = document.getElementById('darkModeToggle');
-if (darkModeToggle) {
-    const icon = darkModeToggle.querySelector('i');
-    const applyDark = (isDark) => {
-        document.body.classList.toggle('dark-mode', isDark);
-        if (icon) icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
-        localStorage.setItem('darkMode', isDark);
-    };
-    applyDark(localStorage.getItem('darkMode') === 'true');
-    darkModeToggle.addEventListener('click', () => applyDark(!document.body.classList.contains('dark-mode')));
+const theme = document.querySelector("#theme");
+function setTheme(dark) {
+  document.body.classList.toggle("dark", dark);
+  theme.setAttribute("aria-pressed", String(dark));
 }
-
-// Mobile Navigation
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('nav-menu');
-if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => navMenu.classList.toggle('active'));
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-        link.addEventListener('click', () => navMenu.classList.remove('active'));
-    });
+try {
+  setTheme(localStorage.getItem("darkMode") === "true");
+} catch {}
+theme.addEventListener("click", () => {
+  const dark = !document.body.classList.contains("dark");
+  setTheme(dark);
+  try {
+    localStorage.setItem("darkMode", String(dark));
+  } catch {}
+});
+const photo = document.querySelector("#slide");
+if (photo) {
+  const slides = [
+    ["entrance.webp", "The main entrance"],
+    ["science.webp", "Science in action"],
+    ["sports.webp", "On the sports field"],
+  ];
+  let i = 0;
+  function advance(step) {
+    i = (i + step + slides.length) % slides.length;
+    const [file, title] = slides[i];
+    photo.src = `images/${file}`;
+    photo.alt = title;
+    document.querySelector("#caption").innerHTML =
+      `<b>0${i + 1} / 03</b> &nbsp; ${title.toUpperCase()}`;
+  }
+  document.querySelector("#next").onclick = () => advance(1);
+  document.querySelector("#prev").onclick = () => advance(-1);
 }
-
-// Counter Animation (on pages with .counter)
-document.querySelectorAll('.counter').forEach(counter => {
-    const updateCount = () => {
-        const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText;
-        const increment = target / 200;
-        if (count < target) {
-            counter.innerText = Math.ceil(count + increment);
-            setTimeout(updateCount, 20);
-        } else {
-            counter.innerText = target;
-        }
-    };
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                updateCount();
-                observer.unobserve(entry.target);
-            }
+const lightbox = document.querySelector("dialog");
+if (lightbox) {
+  document.querySelectorAll(".gallery button").forEach(
+    (card) =>
+      (card.onclick = () => {
+        const img = card.querySelector("img");
+        Object.assign(lightbox.querySelector("img"), {
+          src: img.src,
+          alt: img.alt,
         });
-    }, { threshold: 0.5 });
-    observer.observe(counter);
-});
-
-// News Modals
-document.querySelectorAll('.read-more').forEach(trigger => {
-    trigger.addEventListener('click', (e) => {
-        e.preventDefault();
-        const modalId = trigger.getAttribute('data-modal');
-        const modal = document.getElementById(modalId);
-        if (modal) modal.style.display = 'flex';
-    });
-});
-document.querySelectorAll('.close-modal').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const modal = btn.closest('.modal');
-        if (modal) modal.style.display = 'none';
-    });
-});
-window.addEventListener('click', (e) => {
-    if (e.target.classList.contains('modal')) e.target.style.display = 'none';
-});
-
-// Lightbox (Gallery)
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const closeLightbox = document.querySelector('.close-lightbox');
-document.querySelectorAll('.gallery-item img').forEach(img => {
-    img.addEventListener('click', () => {
-        if (lightbox && lightboxImg) {
-            lightbox.style.display = 'block';
-            lightboxImg.src = img.src;
-        }
-    });
-});
-if (closeLightbox) {
-    closeLightbox.addEventListener('click', () => { if (lightbox) lightbox.style.display = 'none'; });
-    lightbox?.addEventListener('click', (e) => {
-        if (e.target !== lightboxImg) lightbox.style.display = 'none';
-    });
+        lightbox.querySelector("p").textContent = img.alt;
+        lightbox.showModal();
+      }),
+  );
+  lightbox.querySelector("button").onclick = () => lightbox.close();
+  lightbox.onclick = (e) => {
+    if (e.target === lightbox) lightbox.close();
+  };
 }
-
-// Countdown (News page)
-const countDownDate = new Date("Aug 15, 2026 08:00:00").getTime();
-const countdownInterval = setInterval(() => {
-    const now = new Date().getTime();
-    const distance = countDownDate - now;
-    if (distance < 0) { clearInterval(countdownInterval); return; }
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    document.getElementById('days').innerText = days;
-    document.getElementById('hours').innerText = hours;
-    document.getElementById('minutes').innerText = minutes;
-    document.getElementById('seconds').innerText = seconds;
-}, 1000);
-
-// Contact Form
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const message = document.getElementById('message').value.trim();
-        const status = document.getElementById('form-status');
-        if (!name || !email || !message) {
-            status.innerHTML = '<span style="color: red;">All fields are required.</span>';
-            return;
-        }
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-            status.innerHTML = '<span style="color: red;">Invalid email address.</span>';
-            return;
-        }
-        status.innerHTML = '<span style="color: green;">Message sent successfully!</span>';
-        contactForm.reset();
-        setTimeout(() => status.innerHTML = '', 3000);
-    });
-}
-
-// Newsletter
-const newsletterForm = document.getElementById('newsletterForm');
-if (newsletterForm) {
-    newsletterForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('Thank you for subscribing!');
-        newsletterForm.reset();
-    });
-}
-
-// Back to Top
-const backToTop = document.getElementById('backToTop');
-window.addEventListener('scroll', () => {
-    if (backToTop) backToTop.style.display = window.pageYOffset > 300 ? 'block' : 'none';
+const form = document.querySelector("#contactForm");
+form?.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const data = new FormData(form);
+  const body = `${data.get("message")}\n\n${data.get("name")}\n${data.get("email")}`;
+  location.href = `mailto:Kenyattataita@gmail.com?subject=${encodeURIComponent(data.get("subject"))}&body=${encodeURIComponent(body)}`;
 });
-backToTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
