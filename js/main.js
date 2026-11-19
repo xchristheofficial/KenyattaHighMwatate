@@ -42,28 +42,63 @@ if (photo) {
     photo.src = `images/${file}`;
     photo.alt = title;
     document.querySelector("#caption").innerHTML =
-      `<b>0${i + 1} / 03</b> &nbsp; ${title.toUpperCase()}`;
+      `<b>0${i + 1} / 03</b> &nbsp; ${title}`;
   }
   document.querySelector("#next").onclick = () => advance(1);
   document.querySelector("#prev").onclick = () => advance(-1);
 }
-const lightbox = document.querySelector("dialog");
+const lightbox = document.querySelector(".viewer");
 if (lightbox) {
-  document.querySelectorAll(".gallery button").forEach(
-    (card) =>
-      (card.onclick = () => {
-        const img = card.querySelector("img");
-        Object.assign(lightbox.querySelector("img"), {
-          src: img.src,
-          alt: img.alt,
-        });
-        lightbox.querySelector("p").textContent = img.alt;
-        lightbox.showModal();
-      }),
+  const cards = Array.from(document.querySelectorAll(".gallery button"));
+  const photo = lightbox.querySelector("img");
+  let current = 0;
+  function show(index) {
+    current = (index + cards.length) % cards.length;
+    const image = cards[current].querySelector("img");
+    photo.src = image.src;
+    photo.alt = image.alt;
+    lightbox.querySelector("small").textContent =
+      `Photo ${current + 1} of ${cards.length}`;
+    lightbox.querySelector("strong").textContent = image.alt;
+  }
+  cards.forEach((card, i) =>
+    card.addEventListener("click", () => {
+      show(i);
+      lightbox.showModal();
+    }),
   );
-  lightbox.querySelector("button").onclick = () => lightbox.close();
-  lightbox.onclick = (e) => {
+  lightbox.querySelector("[data-close]").onclick = () => lightbox.close();
+  lightbox.querySelector("[data-prev]").onclick = () => show(current - 1);
+  lightbox.querySelector("[data-next]").onclick = () => show(current + 1);
+  lightbox.addEventListener("click", (e) => {
     if (e.target === lightbox) lightbox.close();
+  });
+  lightbox.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+      e.preventDefault();
+      show(current + (e.key === "ArrowRight" ? 1 : -1));
+    }
+  });
+  const stage = lightbox.querySelector(".viewer-stage");
+  let start;
+  stage.onpointerdown = (e) => {
+    if (!e.isPrimary) {
+      start = null;
+      return;
+    }
+    start = [e.clientX, e.clientY];
+    stage.setPointerCapture(e.pointerId);
+  };
+  stage.onpointercancel = () => {
+    start = null;
+  };
+  stage.onpointerup = (e) => {
+    if (!start) return;
+    const dx = e.clientX - start[0],
+      dy = e.clientY - start[1];
+    if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.5)
+      show(current + (dx < 0 ? 1 : -1));
+    start = null;
   };
 }
 const form = document.querySelector("#contactForm");

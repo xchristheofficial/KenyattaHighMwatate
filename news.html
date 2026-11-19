@@ -9,7 +9,12 @@
       content="Kenyatta High School Mwatate — a national boys’ boarding school in Taita Taveta since 1970. Explore our heritage, academics and campus life."
     />
     <link rel="icon" href="favicon.ico?v=2" sizes="16x16 32x32 48x48" />
-    <link rel="icon" href="images/favicon.svg?v=2" type="image/svg+xml" sizes="any" />
+    <link
+      rel="icon"
+      href="images/favicon.svg?v=2"
+      type="image/svg+xml"
+      sizes="any"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <script defer src="js/main.js"></script>
   </head>
@@ -124,7 +129,105 @@
           News from the classroom, the sports field, and our school community.
         </p>
       </div>
-      <div class="cards">
+      <section id="results" class="result-panel" aria-labelledby="result-title">
+        <div class="result-head">
+          <div>
+            <div class="kicker">EXAMINATION DESK</div>
+            <h2 id="result-title">KCSE 2025 results<span>.</span></h2>
+          </div>
+          <span class="provisional">Provisional</span>
+        </div>
+        <dl class="result-stats">
+          <div>
+            <dt>Mean score</dt>
+            <dd>8.518 <small>(B)</small></dd>
+          </div>
+          <div>
+            <dt>Candidates</dt>
+            <dd>359</dd>
+          </div>
+          <div>
+            <dt>Direct university transition</dt>
+            <dd>321 <small>/ 359</small></dd>
+          </div>
+        </dl>
+        <details>
+          <summary>Grade distribution</summary>
+          <table>
+            <caption>
+              Provisional KCSE 2025 grade counts
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Grade</th>
+                <th scope="col">Candidates</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">A</th>
+                <td>7</td>
+              </tr>
+              <tr>
+                <th scope="row">A-</th>
+                <td>41</td>
+              </tr>
+              <tr>
+                <th scope="row">B+</th>
+                <td>50</td>
+              </tr>
+              <tr>
+                <th scope="row">B</th>
+                <td>79</td>
+              </tr>
+              <tr>
+                <th scope="row">B-</th>
+                <td>92</td>
+              </tr>
+              <tr>
+                <th scope="row">C+</th>
+                <td>52</td>
+              </tr>
+              <tr>
+                <th scope="row">C</th>
+                <td>26</td>
+              </tr>
+              <tr>
+                <th scope="row">C-</th>
+                <td>9</td>
+              </tr>
+              <tr>
+                <th scope="row">D+</th>
+                <td>2</td>
+              </tr>
+              <tr>
+                <th scope="row">D</th>
+                <td>1</td>
+              </tr>
+              <tr>
+                <th scope="row">D-</th>
+                <td>0</td>
+              </tr>
+              <tr>
+                <th scope="row">E</th>
+                <td>0</td>
+              </tr>
+              <tr>
+                <th scope="row">X</th>
+                <td>0</td>
+              </tr>
+              <tr>
+                <th scope="row">Y</th>
+                <td>0</td>
+              </tr>
+            </tbody>
+          </table>
+        </details>
+        <a class="sheet-link" href="images/kcse.jpg"
+          >View the original school results sheet ↗</a
+        >
+      </section>
+      <div class="cards news-pair">
         <article id="fair" class="story">
           <img src="images/science.webp" alt="" />
           <div>
@@ -143,18 +246,6 @@
             <h2>Annual Sports Day</h2>
             <p>
               A day of athletic competition and house spirit at Kenyatta High.
-            </p>
-          </div>
-        </article>
-        <article id="results" class="story">
-          <img src="images/kcse.jpg" alt="" />
-          <div>
-            <label>28 JUL 2026</label>
-            <h2>KCSE 2025 results</h2>
-            <p>
-              Kenyatta High recorded a mean score of 8.959, with over 90%
-              university transition.
-              <a href="images/kcse.jpg">View results sheet ↗</a>
             </p>
           </div>
         </article>

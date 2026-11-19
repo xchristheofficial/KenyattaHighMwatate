@@ -9,7 +9,12 @@
       content="Kenyatta High School Mwatate — a national boys’ boarding school in Taita Taveta since 1970. Explore our heritage, academics and campus life."
     />
     <link rel="icon" href="favicon.ico?v=2" sizes="16x16 32x32 48x48" />
-    <link rel="icon" href="images/favicon.svg?v=2" type="image/svg+xml" sizes="any" />
+    <link
+      rel="icon"
+      href="images/favicon.svg?v=2"
+      type="image/svg+xml"
+      sizes="any"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <script defer src="js/main.js"></script>
   </head>
@@ -242,9 +247,19 @@
           </div>
         </button>
       </div>
-      <dialog aria-label="Enlarged photograph">
-        <button aria-label="Close photograph">×</button><img alt="" />
-        <p></p>
+      <dialog class="viewer" aria-label="Campus photo viewer">
+        <div class="viewer-top">
+          <span>CAMPUS GALLERY</span
+          ><button data-close aria-label="Close photograph" autofocus>×</button>
+        </div>
+        <div class="viewer-stage"><img alt="" draggable="false" /></div>
+        <div class="viewer-bottom">
+          <p aria-live="polite"><small></small><strong></strong></p>
+          <div>
+            <button data-prev aria-label="Previous photograph">‹</button
+            ><button data-next aria-label="Next photograph">›</button>
+          </div>
+        </div>
       </dialog>
     </main>
     <footer>
