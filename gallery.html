@@ -1,45 +1,289 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Gallery | Kenyatta High School Mwatate</title>
-    <link rel="icon" type="image/jpeg" href="images/badge.jpg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <div id="preloader"><div class="loader"></div></div>
-    <header id="header">
-        <div class="top-bar"><div class="container"><span><i class="fas fa-phone"></i> 020-2338069 / 0743 123135</span><span><i class="fas fa-envelope"></i> Kenyattataita@gmail.com</span><span><i class="fas fa-map-marker-alt"></i> Mwatate</span></div></div>
-        <nav class="navbar"><div class="container"><a href="index.html" class="logo"><img src="images/badge.jpg" alt="Logo"><div><h1>Kenyatta High</h1><p>Mwatate</p></div></a><ul class="nav-menu" id="nav-menu"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="academics.html">Academics</a></li><li><a href="news.html">News & Events</a></li><li><a href="gallery.html" class="active">Gallery</a></li><li><a href="contact.html">Contact</a></li><li><button id="darkModeToggle"><i class="fas fa-moon"></i></button></li></ul><div class="hamburger"><span></span><span></span><span></span></div></div></nav>
+    <meta
+      name="description"
+      content="Kenyatta High School Mwatate — a national boys’ boarding school in Taita Taveta since 1970. Explore our heritage, academics and campus life."
+    />
+    <link rel="icon" href="favicon.ico?v=2" sizes="16x16 32x32 48x48" />
+    <link rel="icon" href="images/favicon.svg?v=2" type="image/svg+xml" sizes="any" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/main.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header>
+      <div class="utility">
+        <div class="wrap">
+          <span
+            ><svg
+              aria-hidden="true"
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z" />
+              <circle cx="12" cy="10" r="2" />
+            </svg>
+            Mwatate, Taita Taveta County</span
+          >
+          <div>
+            <a href="tel:+254202338069"
+              ><svg
+                aria-hidden="true"
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="m5 3 4 1 1 5-3 2c2 3 3 4 6 6l2-3 5 1 1 4c-1 6-12-1-15-5S1 4 5 3Z"
+                />
+              </svg>
+              020-2338069</a
+            ><a href="mailto:Kenyattataita@gmail.com"
+              ><svg
+                aria-hidden="true"
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m3 6 9 7 9-7" />
+              </svg>
+              Kenyattataita@gmail.com</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="wrap navrow">
+        <a class="brand" href="index.html"
+          ><img src="images/badge.jpg" alt="" /><span
+            >KENYATTA HIGH<small>SCHOOL · MWATATE</small></span
+          ></a
+        ><button
+          class="menu"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          aria-controls="nav"
+        >
+          <svg
+            aria-hidden="true"
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M3 6h18M3 12h18M3 18h18" />
+          </svg>
+        </button>
+        <nav id="nav" aria-label="Main navigation">
+          <a href="index.html">Home </a><a href="about.html">About </a
+          ><a href="academics.html">Academics </a
+          ><a href="news.html">News & Events </a
+          ><a href="gallery.html" aria-current="page">Gallery </a
+          ><a href="contact.html" class="navcontact"
+            >Contact us
+            <svg
+              aria-hidden="true"
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M5 18 18 5M6 5h12v12" /></svg
+          ></a>
+        </nav>
+      </div>
     </header>
-
-    <section id="gallery" class="section">
-        <div class="container">
-            <h2 class="section-title">Our Gallery</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item"><img src="images/enjoying.jpg" alt="Enjoying"></div>
-                <div class="gallery-item"><img src="images/entrance2.jpg" alt="Entrance"></div>
-                <div class="gallery-item"><img src="images/Inside.jpg" alt="Students"></div>
-                <div class="gallery-item"><img src="images/Prefects.jpg" alt="Prefects"></div>
-                <div class="gallery-item"><img src="images/games.jpg" alt="Sports"></div>
-                <div class="gallery-item"><img src="images/games2.jpg" alt="Games"></div>
-            </div>
+    <main id="main" class="wrap inner">
+      <div class="intro">
+        <div class="kicker">ON CAMPUS</div>
+        <h1>School gallery<span>.</span></h1>
+        <p>
+          A look at everyday life in Mwatate. Select a photograph to see it in
+          full.
+        </p>
+      </div>
+      <div class="cards gallery">
+        <button class="photo-card">
+          <div class="card-image">
+            <img src="images/Enjoying.jpg" alt="Community gatherings" />
+          </div>
+          <div class="cardname">
+            <h3>Community gatherings</h3>
+            <svg
+              aria-hidden="true"
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M5 18 18 5M6 5h12v12" />
+            </svg>
+          </div></button
+        ><button class="photo-card">
+          <div class="card-image">
+            <img src="images/entrance2.jpg" alt="The school gates" />
+          </div>
+          <div class="cardname">
+            <h3>The school gates</h3>
+            <svg
+              aria-hidden="true"
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M5 18 18 5M6 5h12v12" />
+            </svg>
+          </div></button
+        ><button class="photo-card">
+          <div class="card-image">
+            <img src="images/Inside.jpg" alt="On the grounds" />
+          </div>
+          <div class="cardname">
+            <h3>On the grounds</h3>
+            <svg
+              aria-hidden="true"
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M5 18 18 5M6 5h12v12" />
+            </svg>
+          </div></button
+        ><button class="photo-card">
+          <div class="card-image">
+            <img src="images/Prefects.jpg" alt="Student leadership" />
+          </div>
+          <div class="cardname">
+            <h3>Student leadership</h3>
+            <svg
+              aria-hidden="true"
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M5 18 18 5M6 5h12v12" />
+            </svg>
+          </div></button
+        ><button class="photo-card">
+          <div class="card-image">
+            <img src="images/games.jpg" alt="Celebrating together" />
+          </div>
+          <div class="cardname">
+            <h3>Celebrating together</h3>
+            <svg
+              aria-hidden="true"
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M5 18 18 5M6 5h12v12" />
+            </svg>
+          </div></button
+        ><button class="photo-card">
+          <div class="card-image">
+            <img src="images/games2.jpg" alt="Games at school" />
+          </div>
+          <div class="cardname">
+            <h3>Games at school</h3>
+            <svg
+              aria-hidden="true"
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M5 18 18 5M6 5h12v12" />
+            </svg>
+          </div>
+        </button>
+      </div>
+      <dialog aria-label="Enlarged photograph">
+        <button aria-label="Close photograph">×</button><img alt="" />
+        <p></p>
+      </dialog>
+    </main>
+    <footer>
+      <div class="wrap foot">
+        <div>
+          <h3>Kenyatta High School Mwatate</h3>
+          <p>Education for service · Established 1970</p>
         </div>
-    </section>
-    <div id="lightbox" class="lightbox"><span class="close-lightbox">&times;</span><img class="lightbox-content" id="lightbox-img"></div>
-
-    <footer class="footer">
-        <div class="container footer-grid">
-            <div class="footer-col"><h3>Kenyatta High Mwatate</h3><p>"Education for service" – since 1970.</p></div>
-            <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="academics.html">Academics</a></li><li><a href="gallery.html">Gallery</a></li></ul></div>
-            <div class="footer-col"><h4>Contact</h4><p><i class="fas fa-phone"></i> 020-2338069<br>0743 123135</p><p><i class="fas fa-envelope"></i> Kenyattataita@gmail.com</p></div>
-            <div class="footer-col"><h4>Newsletter</h4><form id="newsletterForm"><input type="email" placeholder="Enter your email" required><button type="submit" class="btn btn-sm">Subscribe</button></form></div>
-        </div>
-        <div class="footer-bottom"><p>&copy; 2026 Kenyatta High School Mwatate. | KNEC: 1100003</p></div>
+        <a href="contact.html"
+          >Contact the school
+          <svg
+            aria-hidden="true"
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5 18 18 5M6 5h12v12" /></svg></a
+        ><button id="theme" aria-label="Toggle dark mode" aria-pressed="false">
+          <svg
+            aria-hidden="true"
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M20 15a9 9 0 0 1-11-12 9 9 0 1 0 11 12Z" />
+          </svg>
+        </button>
+      </div>
+      <div class="wrap fine">
+        © 2026 Kenyatta High School Mwatate &nbsp; / &nbsp; KNEC Code: 1100003
+      </div>
     </footer>
-    <button id="backToTop"><i class="fas fa-chevron-up"></i></button>
-    <script src="js/main.js"></script>
-</body>
+  </body>
 </html>
